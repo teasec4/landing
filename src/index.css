@@ -1,0 +1,7 @@
+/* extra glow — independent from Tailwind */
+body {
+  background:
+    radial-gradient(1000px 600px at 10% -10%, rgba(16,33,74,.33), transparent 60%),
+    radial-gradient(800px 500px at 90% -20%, rgba(79,140,255,.13), transparent 60%),
+    #0b1020;
+}
