@@ -32,3 +32,29 @@ body {
 }
 }
 
+/* Animated construction bar */
+@keyframes barberpole {
+  from { background-position: 0 0; }
+  to   { background-position: 40px 0; }
+}
+@keyframes indeterminate {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+/* полосатая заливка “как строительная лента” */
+.barber {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0,0,0,0.08) 0 10px,
+    rgba(0,0,0,0.16) 10px 20px
+  );
+  background-size: 40px 40px;
+  animation: barberpole 1s linear infinite;
+}
+
+/* уважение к reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .barber { animation: none; }
+  .indeterminate { animation: none; }
+}
+
