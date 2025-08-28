@@ -29,16 +29,20 @@ export default function Features() {
 <div id="demo" className="mt-12">
   <h3 className="mb-4 text-lg font-semibold">Demo</h3>
   <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-  {['s1.png','s2.png','s3.png'].map((name) => (
-    <div key={name} className="flex justify-center">
-      <img
-        src={`${import.meta.env.BASE_URL}screens/${name}`}
-        alt={name}
-        className="w-full max-w-xs md:max-w-sm drop-shadow-xl select-none pointer-events-none"
-      />
-    </div>
-  ))}
-</div>
+    {['s1.png','s2.png','s3.png'].map((name) => (
+      <div key={name} className="flex justify-center">
+        <Screenshot
+          src={`${import.meta.env.BASE_URL}screens/${name}`}
+          alt={name}
+          fit="contain"
+          rounded
+          shadow
+          wrapperClassName="w-full max-w-xs md:max-w-sm"
+          imgClassName="w-full h-auto"
+        />
+      </div>
+    ))}
+  </div>
 </div>
     </section>
   )

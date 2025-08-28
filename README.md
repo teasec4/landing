@@ -23,4 +23,3 @@ npm run deploy
 
 ---
 
-Хочешь, я ещё добавлю готовый **Privacy Policy шаблон на английском** прямо в README (чтобы было видно, что он лежит в `public/privacy.html`)?

@@ -44,10 +44,14 @@ export default function Hero() {
         {/* ПРАВАЯ КОЛОНКА: телефон */}
         
 <div className="w-full md:justify-self-end flex justify-center md:justify-end">
-  <img
+  <Screenshot
     src={`${import.meta.env.BASE_URL}screens/s1.png`}
     alt="App screenshot"
-    className="w-full max-w-sm md:max-w-md drop-shadow-2xl select-none pointer-events-none"
+    fit="contain"                                   // чтобы не обрезало
+    rounded                                        // можно убрать, если нужно без скругления
+    shadow                                         // drop-shadow по альфе PNG
+    wrapperClassName="w-full max-w-sm md:max-w-md" // общий размер
+    imgClassName="w-full h-auto"                   // размер <img>
   />
 </div>
       </div>

@@ -1,30 +1,42 @@
-// src/components/Screenshot.jsx
 import React from 'react'
 
 export default function Screenshot({
   src,
   alt,
+  fit = 'contain',
+  rounded = true,
+  shadow = true,
   wrapperClassName = '',
   imgClassName = '',
-  fallback = null,           // ReactNode на время загрузки
+  loading = 'lazy',
 }) {
   const [loaded, setLoaded] = React.useState(false)
+  const radius = rounded ? 'rounded-2xl' : ''
+  const drop = shadow ? 'drop-shadow-2xl' : ''
 
   return (
-    <div className={`relative ${wrapperClassName}`}>
-      {/* Fallback поверх ТОЛЬКО пока не загрузилось */}
+    <div className={`relative inline-block ${wrapperClassName}`}>
+      {/* показываем скелет ТОЛЬКО пока не загружено */}
       {!loaded && (
-        fallback ?? (
-          <div className="absolute inset-0 animate-pulse rounded-xl bg-slate-200/60" />
-        )
+        <div
+          className={`absolute inset-0 ${radius} bg-slate-200/60 animate-pulse`}
+        />
       )}
 
       <img
-  src={src}
-  alt={alt}
-  onLoad={() => setLoaded(true)}
-  className={`absolute inset-0 h-full w-full object-contain rounded-xl border border-slate-200 bg-slate-50 transition-opacity ${loaded ? 'opacity-100' : 'opacity-0'} ${imgClassName}`}
-/>
+        src={src}
+        alt={alt}
+        loading={loading}
+        onLoad={() => setLoaded(true)}
+        className={[
+          imgClassName || 'w-full h-auto',
+          radius,
+          drop,
+          fit === 'contain' ? 'object-contain' : 'object-cover',
+          'select-none pointer-events-none transition-opacity duration-300',
+          loaded ? 'opacity-100' : 'opacity-0',
+        ].join(' ')}
+      />
     </div>
   )
 }
