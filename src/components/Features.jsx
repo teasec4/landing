@@ -30,7 +30,7 @@ export default function Features() {
             <div key={name} className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
               <div className="aspect-[9/19.5] w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
                 <img
-                  src={`/screens/${name}`}
+                  src={`${import.meta.env.BASE_URL}screens/${name}`}
                   alt={name}
                   className="h-full w-full object-cover"
                   onError={(e) => { e.currentTarget.style.display = 'none' }}

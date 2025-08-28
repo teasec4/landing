@@ -37,11 +37,11 @@ export default function Hero() {
         <div className="mx-auto w-full max-w-md rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
           <div className="aspect-[9/19.5] w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
             <img
-              src="/screens/s1.png"
-              alt="App screenshot"
-              className="h-full w-full object-cover"
-              onError={(e) => { e.currentTarget.style.display = 'none' }}
-            />
+                src={`${import.meta.env.BASE_URL}screens/s1.png`}
+                alt="App screenshot"
+                className="h-full w-full object-cover"
+                onError={(e) => { e.currentTarget.style.display = 'none' }}
+              />
             <div className="h-full w-full grid place-items-center text-slate-500">
               Put a screenshot at <code>/public/screens/s1.png</code>
             </div>
