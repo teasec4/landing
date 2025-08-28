@@ -1,19 +1,21 @@
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import Navbar from './components/Navbar.jsx'
-import Hero from './components/Hero.jsx'
-import Features from './components/Features.jsx'
-import Footer from './components/Footer.jsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home.jsx'
+import GetTheApp from './pages/GetTheApp.jsx'
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <Features />
-      <Footer />
-    </div>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/get" element={<GetTheApp />} />
+        {/* optional 404 */}
+        <Route path="*" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
