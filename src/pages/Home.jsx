@@ -5,6 +5,7 @@ import Hero from '../components/Hero.jsx'
 import Features from '../components/Features.jsx'
 import Footer from '../components/Footer.jsx'
 import PriceTicker from '../components/PriceTicker.jsx'
+import Contact from '../components/Contact.jsx'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <PriceTicker /> 
       <Hero />
       <Features />
+      <Contact />
       <Footer />
     </div>
   )

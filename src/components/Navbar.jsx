@@ -28,6 +28,7 @@ React.useEffect(() => {
           {/* section anchors still fine on the home page */}
           <a href={`${import.meta.env.BASE_URL}#features`} className="hover:text-black">Features</a>
           <a href={`${import.meta.env.BASE_URL}#demo`} className="hover:text-black">Demo</a>
+          <a href={`${import.meta.env.BASE_URL}#contact`} className="hover:text-black">Contact</a>
           <a href={`${import.meta.env.BASE_URL}privacy.html`} className="hover:text-black">Privacy</a>
         </div>
 
